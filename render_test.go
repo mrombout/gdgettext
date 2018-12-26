@@ -26,7 +26,7 @@ func TestRender(t *testing.T) {
 					},
 				},
 				Msgid:  "test",
-				Msgstr: "Hello World!",
+				Msgstr: "It's a string!",
 			},
 		},
 	}

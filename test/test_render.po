@@ -19,4 +19,4 @@ msgstr ""
 
 #: my_script.gd:1 my_script.tscn:76
 msgid "test"
-msgstr "Hello World!"
+msgstr "It's a string!"
