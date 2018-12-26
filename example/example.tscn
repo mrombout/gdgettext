@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://example.gd" type="Script" id=1]
+
+[node name="example" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+
+[node name="translated_label" type="Label" parent="vbox"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "This label is translated."
+
+[node name="translated_button" type="Button" parent="vbox"]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 44.0
+text = "This button is translated."
+
+[node name="switch_to_en" type="Button" parent="vbox"]
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 74.0
+text = "Translate to English"
+
+[node name="switch_to_nl" type="Button" parent="vbox"]
+margin_top = 84.0
+margin_right = 1024.0
+margin_bottom = 104.0
+text = "Translate to Dutch"
+
+[node name="switch_to_no" type="Button" parent="vbox"]
+margin_top = 114.0
+margin_right = 1024.0
+margin_bottom = 134.0
+text = "Translate to Norwegian"
+
+[connection signal="pressed" from="vbox/switch_to_en" to="." method="_on_switch_to_en_pressed"]
+[connection signal="pressed" from="vbox/switch_to_nl" to="." method="_on_switch_to_nl_pressed"]
+[connection signal="pressed" from="vbox/switch_to_no" to="." method="_on_switch_to_no_pressed"]
