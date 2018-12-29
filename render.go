@@ -21,7 +21,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 {{range .Translations}}
 #: {{range $index, $loc := .Files}}{{if $index}} {{end}}{{$loc.File}}:{{$loc.Line}}{{end}}
