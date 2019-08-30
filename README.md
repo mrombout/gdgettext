@@ -1,6 +1,6 @@
 # gdtexttext
 
-[![Build Status](https://travis-ci.com/mrombout/gdgettext.svg?branch=master)](https://travis-ci.com/mrombout/gdgettext) [![Go Report Card](https://goreportcard.com/badge/github.com/mrombout/gdgettext)](https://goreportcard.com/report/github.com/mrombout/gdgettext)
+[![Actions Status](https://github.com/mrombout/gdgettext/workflows/Main/badge.svg)](https://github.com/mrombout/gdgettext/actions) [![Go Report Card](https://goreportcard.com/badge/github.com/mrombout/gdgettext)](https://goreportcard.com/report/github.com/mrombout/gdgettext)
 
 The `gdgettext` program extracts translatable strings from given Godot input files. It is meant as an alternative for `xgettext` specifically for games using [Godot Engine](https://godotengine.org/).
 
