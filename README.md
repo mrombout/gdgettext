@@ -27,14 +27,19 @@ Currently it extracts translatable strings using the following rules:
 
 ### Poedit
 
-Go to _File - Preferences_ and add a new extractor in the _Extractors_ tab and enter the following settings:
+Open _Poedit Preferences_ and add a new extractor in the _Extractors_ tab and enter the following settings:
 
 | Setting                                                     | Value              |
 | ----------------------------------------------------------- | ------------------ |
+| Language                                                    | Godot              |
 | List of extensions separated by semicolons (e.g. *.cpp;*.h) | ‪*.gd;*.tscn        |
 | Command to extract translations                             | ‪gdgettext -o %o %F |
 | An item in input files list                                 | %f                 |
-travis g
+
+Then create a new `.po` file and press _Extract from sources_ and set the root of your Godot project as the `Base path` and add paths containing the translatable strings to the `Paths` section.
+
+After this Poedit will use `gdgettext` to extract all translatable strings and you can start editing the `.po` file using Poedit.
+
 ### Godot
 
 Use `tr()` in your `.gd` files or set the `text` attributes on the `Control`s in your scene (e.g. `Button`) to make strings translatable.
