@@ -1,3 +1,3 @@
 # Example
 
-This required Godot 3.1 alpha 4 or newer.
+This example project requires Godot 3.5.3 or later.
