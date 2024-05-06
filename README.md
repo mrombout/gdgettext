@@ -1,5 +1,10 @@
 # gdtexttext
 
+> [!IMPORTANT]
+> Since Godot 4.0, the editor can generate a PO template automatically from specified scene and GDscript files.
+> See [Automatic generation using the editor](https://docs.godotengine.org/en/4.2/tutorials/i18n/localization_using_gettext.html#automatic-generation-using-the-editor) for more information.
+> You don't need `gdgettext` anymore.
+
 [![Actions Status](https://github.com/mrombout/gdgettext/workflows/Main/badge.svg)](https://github.com/mrombout/gdgettext/actions) [![Go Report Card](https://goreportcard.com/badge/github.com/mrombout/gdgettext)](https://goreportcard.com/report/github.com/mrombout/gdgettext)
 
 The `gdgettext` program extracts translatable strings from given Godot input files. It is meant as an alternative for `xgettext` specifically for games using [Godot Engine](https://godotengine.org/).
