@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
+	"os"
 	"path/filepath"
-	"strings"
 )
 
 var supportedExts = []string{
@@ -37,18 +37,19 @@ func process(fs fileSystem, filePaths []string) (poFile, error) {
 		if !isSupportedExt(filepath.Ext(filePath)) {
 			continue
 		}
-
-		content, err := fs.readFile(filePath)
-		if err != nil {
-			return poFile, err
+		f, e := os.Open(filePath)
+		if e != nil {
+			panic(e)
 		}
+		defer f.Close()
 
-		scanner := bufio.NewScanner(strings.NewReader(string(content)))
+		r := bufio.NewReader(f)
 		line := 0
-		for scanner.Scan() {
+		s, e := Readln(r)
+		for e == nil {
 			line++
-
-			keys := extract(string(scanner.Text()))
+			linestr := s
+			keys := extract(linestr)
 			for _, key := range keys {
 				messageLoc := messageLocation{
 					File: filepath.Base(filePath),
@@ -74,12 +75,25 @@ func process(fs fileSystem, filePaths []string) (poFile, error) {
 				}
 
 			}
+			s, e = Readln(r)
 		}
+
 	}
 
 	return poFile, nil
 }
-
+func Readln(r *bufio.Reader) (string, error) {
+	var (
+		isPrefix bool  = true
+		err      error = nil
+		line, ln []byte
+	)
+	for isPrefix && err == nil {
+		line, isPrefix, err = r.ReadLine()
+		ln = append(ln, line...)
+	}
+	return string(ln), err
+}
 func isSupportedExt(ext string) bool {
 	for _, supportedExt := range supportedExts {
 		if ext == supportedExt {
